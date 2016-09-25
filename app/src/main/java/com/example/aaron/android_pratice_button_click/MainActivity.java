@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     TextView tv_Show;
     Button btn3;
     Button btn4;
+    Button btn5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
         btn4 = (Button) findViewById(R.id.btn4);
         btn4.setOnClickListener(new Inner());
+
+        btn5 = (Button) findViewById(R.id.btn5);
+        btn5.setOnClickListener(listener);
     }
 
     public void btn_Click(View view)
@@ -52,4 +56,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             tv_Show.setText("Btn4 to demonstrate Inner Class");
         }
     }
+
+    OnClickListener listener = new OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            tv_Show.setText("Btn5 to demonstrate Anonymous Class");
+        }
+    };
 }
